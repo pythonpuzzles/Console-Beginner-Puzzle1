@@ -10,6 +10,7 @@ def example_a():
     print('You chose: ' + choice)
     print('But it was a trick question, they are BOTH clowns')
 
+
 # Puzzle A - Your favourite color
 #
 # Write a program that asks for your favourite color.
@@ -19,6 +20,13 @@ def example_a():
 def puzzle_a():
     print('\nPuzzle A')
     print('~~~~~~~~~~~')
+
+    fav_color = input("\nWhat's your favourite color?: ")
+
+    # String Interpolation
+    print('Your favourite color is {0}'.format(fav_color))
+    print(f'Your favourite color is %s' % (fav_color))
+    print(f'Your favourite color is {fav_color}')
 
 
 def example_b():
@@ -40,6 +48,11 @@ def example_b():
 def puzzle_b():
     print('\nPuzzle B')
     print('~~~~~~~~~~~')
+
+    message = "I was too sick to do my homework."
+
+    print(message)
+    print("Converted to all upper: " + message.upper())
 
 
 def example_c():
@@ -64,16 +77,28 @@ def puzzle_c():
     print('\nPuzzle C')
     print('~~~~~~~~~~~')
 
+    folder_name = input("Input a folder name: ")
+
+    file_name = input("Input a file name: ")
+
+    # Normally, you have to escape control characters like backslash \\ or quotes \" \" or \n new line
+    file_path = f"C:\\{folder_name}\\{file_name}.txt"
+    print(file_path)
+
+    # r'' means raw mode. Read the string literally and don't interpret control characters like backslash
+    file_path2 = rf"C:\{folder_name}\{file_name}.txt"
+    print(file_path2)
+
 
 if __name__ == '__main__':
 
     # Run the puzzles
 
-    example_a()
-    # puzzle_a()
+    # example_a()
+    puzzle_a()
 
-    example_b()
-    # puzzle_b()
+    # example_b()
+    puzzle_b()
 
-    example_c()
-    # puzzle_c()
+    # example_c()
+    puzzle_c()
